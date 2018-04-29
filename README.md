@@ -41,9 +41,17 @@ chmod +x start-gpu.sh
 
 ## Usage
 
+### Running scripts
+1. Run script using PyCharm with connected remote interpreter
+2. Enter container using
+    ```
+    docker exec -it <container-name> bash
+    ```
+    and run `python` command on a particular script.
+
 ### Caffe development
 
-In case of `caffe` development you can add as a submodule your own modified `caffe` repository or 
+In case of `caffe` development you can add as a submodule your own modified `caffe` repository or download using first command in the `Installation` section.
 
 ### Jupyter
 You can access jupyter after run at
