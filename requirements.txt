@@ -1,0 +1,6 @@
+ipython
+numpy
+scipy
+scikit-learn
+jupyter
+jupyterlab
