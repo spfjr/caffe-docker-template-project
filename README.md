@@ -1,4 +1,4 @@
-# Basic GPU caffe project
+# Basic caffe project structure
 
 ## Description
 
@@ -40,6 +40,13 @@ chmod +x start-gpu.sh
 ```
 
 ## Usage
+
+### Custom projects
+1. Install project using above commands
+2. `rm -r .git`
+3. Create own remote repository on `github` or `gitlab` etc. 
+4. Follow instructions for attaching existing directory to remote repository at https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+5. Modify `.gitsubmodules` if needed to match your project development
 
 ### Running scripts
 1. Run script using PyCharm with connected remote interpreter
