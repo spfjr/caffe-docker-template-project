@@ -2,6 +2,10 @@
 
 ## Description
 
+https://github.com/BVLC/caffe/tree/rcnn-release
+https://github.com/spfjr/caffe-docker-template-project
+https://github.com/guillaume-chevalier/python-caffe-custom-cifar-10-conv-net
+
 Repository was created to ease the procedure of `caffe` installation.  Since I wasn't able to install `caffe` for 2 days on freshly installed ubuntu 16.04, I decided to create middleware docker with caffe installed, where I would be able to develop `caffe` and create models, and install `caffe` itself without problems.
 
 Dockerfiles are based on `Dockerfile`s available at https://github.com/BVLC/caffe/blob/master/docker/gpu/Dockerfile. 

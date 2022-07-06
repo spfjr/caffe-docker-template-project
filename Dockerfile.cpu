@@ -1,6 +1,8 @@
 FROM ubuntu:16.04
 LABEL maintainer=caffe-maint@googlegroups.com
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         cmake \
@@ -17,6 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libprotobuf-dev \
         libsnappy-dev \
         protobuf-compiler \
+        apt-utils gcc g++ gdb gdbserver \
         python-dev \
         python-numpy \
         python-pip \
@@ -31,6 +34,7 @@ WORKDIR $CAFFE_ROOT
 # https://github.com/docker/hub-feedback/issues/460
 ENV CLONE_TAG=1.0
 COPY caffe .
+#COPY Learned-Activation-Functions-Source .
 RUN pip install --upgrade pip==9.0.3 && \
     cd python && for req in $(cat requirements.txt) pydot; do pip install $req; done && cd .. && \
     mkdir build && cd build && \
@@ -48,6 +52,13 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
+#WORKDIR $CAFFE_ROOT
+#ADD Learned-Activation-Functions-Source .
+#RUN cd $CAFFE_ROOT/build && \
+#    cmake -DCPU_ONLY=1 .. && \
+#    make -j"$(nproc)"
+
+#WORKDIR /workspace
 ADD . .
 
 VOLUME [ "/workspace" ]
